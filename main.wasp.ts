@@ -1,4 +1,4 @@
-import { app, page, route } from "@wasp.sh/spec";
+import { app, page, route, query } from "@wasp.sh/spec";
 import { App } from "./src/App" with { type: "ref" };
 import { HomePage } from "./src/home/HomePage" with { type: "ref" };
 import { EmailVerificationPage } from "./src/auth/email/EmailVerificationPage" with { type: "ref" };
@@ -7,6 +7,7 @@ import { PasswordResetPage } from "./src/auth/email/PasswordResetPage" with { ty
 import { RequestPasswordResetPage } from "./src/auth/email/RequestPasswordResetPage" with { type: "ref" };
 import { SignupPage } from "./src/auth/email/SignupPage" with { type: "ref" };
 import { userSignupFields } from "./src/auth/email/userSignupFields" with { type: "ref" };
+import { getMyPlayerProfile } from "./src/player/queries" with { type: "ref" };
 
 export default app({
   name: "socialSoccer",
@@ -40,6 +41,10 @@ export default app({
     rootComponent: App,
   },
   spec: [
+    query(getMyPlayerProfile, {
+    entities: ["PlayerProfile"],
+    auth: true,
+  }),
     route("HomeRoute", "/", page(HomePage)), 
     route("LoginRoute", "/login", page(LoginPage)),
     route("SignupRoute", "/signup", page(SignupPage)),
