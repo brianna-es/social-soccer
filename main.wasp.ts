@@ -8,6 +8,7 @@ import { RequestPasswordResetPage } from "./src/auth/email/RequestPasswordResetP
 import { SignupPage } from "./src/auth/email/SignupPage" with { type: "ref" };
 import { userSignupFields } from "./src/auth/email/userSignupFields" with { type: "ref" };
 import { getMyPlayerProfile } from "./src/player/queries" with { type: "ref" };
+import { PlayerProfilePage } from "./src/player/PlayerProfilePage" with { type: "ref" };
 
 export default app({
   name: "socialSoccer",
@@ -45,7 +46,8 @@ export default app({
     entities: ["PlayerProfile"],
     auth: true,
   }),
-    route("HomeRoute", "/", page(HomePage)), 
+    route("HomeRoute", "/", page(HomePage)),
+    route("PlayerProfileRoute", "/player-profile", page(PlayerProfilePage)),
     route("LoginRoute", "/login", page(LoginPage)),
     route("SignupRoute", "/signup", page(SignupPage)),
     route(
