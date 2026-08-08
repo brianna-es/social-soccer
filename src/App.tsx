@@ -4,9 +4,11 @@ import { Header } from "./shared/components/Header";
 
 export function App() {
   return (
-    <main className="flex min-h-screen w-full flex-col bg-neutral-50 text-neutral-800">
+    <div className="min-h-screen bg-neutral-50">
       <Header />
-      <Outlet />
-    </main>
+      <main className="mx-auto w-full max-w-6xl px-6 py-8">
+        <Outlet />
+      </main>
+    </div>
   );
 }
