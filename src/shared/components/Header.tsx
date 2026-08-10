@@ -1,29 +1,46 @@
 import { logout, useAuth } from "wasp/client/auth";
-import { Link } from "wasp/client/router";
-import Logo from "../../assets/wasp-logo-rounded.svg";
 import { Button, ButtonLink } from "./Button";
 
 export function Header() {
   const { data: user } = useAuth();
 
+  const handleLogout = async () => {
+    await logout();
+    window.location.href = "/";
+  };
+
   return (
-    <header className="sticky top-0 z-10 flex justify-center border-b border-neutral-200 bg-white shadow-sm">
-      <div className="flex w-full max-w-(--breakpoint-lg) items-center justify-between p-4 px-12">
-        <Link to="/login" className="flex items-center gap-2">
-          <img src={Logo} alt="Social Soccer logo" className="h-10 w-10" />
-          <h1 className="text-2xl font-semibold">Social Soccer</h1>
-        </Link>
+    <header className="border-b bg-white">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a
+          href="/"
+          className="text-xl font-bold text-neutral-900"
+        >
+          Social Soccer
+        </a>
 
         <nav>
-          <ul className="flex gap-4 font-semibold">
+          <ul className="flex items-center gap-4 font-semibold">
             {user ? (
-              <li>
-                <Button onClick={logout}>Cerrar sesión</Button>
-              </li>
+              <>
+                <li>
+                  <ButtonLink to="/player-profile">
+                    Mi perfil
+                  </ButtonLink>
+                </li>
+
+                <li>
+                  <Button onClick={handleLogout}>
+                    Cerrar sesión
+                  </Button>
+                </li>
+              </>
             ) : (
               <>
                 <li>
-                  <ButtonLink to="/signup">Registrarse</ButtonLink>
+                  <ButtonLink to="/signup">
+                    Registrarse
+                  </ButtonLink>
                 </li>
 
                 <li>
