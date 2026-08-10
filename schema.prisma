@@ -8,30 +8,30 @@ generator client {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  username  String
+  id       String @id @default(uuid())
+  username String
 
   playerProfile PlayerProfile?
 }
 
 model PlayerProfile {
-  id        String @id @default(uuid())
-  fullName  String
-  position  String?
-  phone     String?
-  qrToken   String @unique
+  id       String  @id @default(uuid())
+  fullName String
+  position String?
+  phone    String?
+  qrToken  String  @unique
 
   userId String @unique
-  user   User @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
 
-  memberships RosterMembership[]
+  memberships    RosterMembership[]
   fairPlayScores FairPlayScore[]
 }
 
 model Team {
-  id        String @id @default(uuid())
-  name      String
-  city      String?
+  id   String  @id @default(uuid())
+  name String
+  city String?
 
   members RosterMembership[]
 }
@@ -40,50 +40,48 @@ model RosterMembership {
   id String @id @default(uuid())
 
   playerId String
-  player PlayerProfile @relation(fields: [playerId], references: [id])
+  player   PlayerProfile @relation(fields: [playerId], references: [id])
 
   teamId String
-  team Team @relation(fields: [teamId], references: [id])
+  team   Team   @relation(fields: [teamId], references: [id])
 }
 
 model League {
-  id    String @id @default(uuid())
-  name  String
+  id   String @id @default(uuid())
+  name String
 
   divisions Division[]
 }
 
 model Division {
-  id String @id @default(uuid())
+  id   String @id @default(uuid())
   name String
 
   leagueId String
-  league League @relation(fields: [leagueId], references: [id])
+  league   League @relation(fields: [leagueId], references: [id])
 
   matches Match[]
 }
 
 model Match {
-  id String @id @default(uuid())
-
-  date DateTime
-  location String
-
-  divisionId String
-  division Division @relation(fields: [divisionId], references: [id])
-
-  events MatchEvent[]
-  report MatchReport?
+  id                 String              @id @default(uuid())
+  date               DateTime
+  location           String
+  divisionId         String
+  division           Division            @relation(fields: [divisionId], references: [id])
+  events             MatchEvent[]
+  report             MatchReport?
+  refereeAssignments RefereeAssignment[]
 }
 
 model MatchEvent {
   id String @id @default(uuid())
 
-  type String
+  type   String
   minute Int
 
   matchId String
-  match Match @relation(fields: [matchId], references: [id])
+  match   Match  @relation(fields: [matchId], references: [id])
 }
 
 model MatchReport {
@@ -92,7 +90,7 @@ model MatchReport {
   summary String
 
   matchId String @unique
-  match Match @relation(fields: [matchId], references: [id])
+  match   Match  @relation(fields: [matchId], references: [id])
 }
 
 model RefereeAssignment {
@@ -101,7 +99,7 @@ model RefereeAssignment {
   refereeName String
 
   matchId String
-  match Match @relation(fields: [matchId], references: [id])
+  match   Match  @relation(fields: [matchId], references: [id])
 }
 
 model PaymentTransaction {
@@ -117,5 +115,5 @@ model FairPlayScore {
   score Int
 
   playerId String
-  player PlayerProfile @relation(fields: [playerId], references: [id])
+  player   PlayerProfile @relation(fields: [playerId], references: [id])
 }

@@ -7,6 +7,7 @@ import { PasswordResetPage } from "./src/auth/email/PasswordResetPage" with { ty
 import { RequestPasswordResetPage } from "./src/auth/email/RequestPasswordResetPage" with { type: "ref" };
 import { SignupPage } from "./src/auth/email/SignupPage" with { type: "ref" };
 import { userSignupFields } from "./src/auth/email/userSignupFields" with { type: "ref" };
+import { onAfterSignup } from "./src/auth/email/onAfterSignup" with { type: "ref" };
 import { getMyPlayerProfile } from "./src/player/queries" with { type: "ref" };
 import { PlayerProfilePage } from "./src/player/PlayerProfilePage" with { type: "ref" };
 
@@ -17,6 +18,7 @@ export default app({
   head: ["<link rel='icon' href='/favicon.ico' />"],
   auth: {
     userEntity: "User",
+    onAfterSignup,
     methods: {
       email: {
         fromField: {
