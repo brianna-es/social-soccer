@@ -16,6 +16,8 @@ import { updateMyPlayerProfile } from "./src/player/actions" with { type: "ref" 
 import { PlayerProfilePage } from "./src/player/PlayerProfilePage" with { type: "ref" };
 import { PlayerVerificationPage } from "./src/player/PlayerVerificationPage" with { type: "ref" };
 
+const isProd = process.env.NODE_ENV === "production";
+
 export default app({
   name: "socialSoccer",
 
@@ -56,7 +58,7 @@ export default app({
   },
 
   emailSender: {
-    provider: "Dummy",
+    provider: isProd ? "SMTP" : "Dummy",
   },
 
   client: {
