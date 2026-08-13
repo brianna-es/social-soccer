@@ -11,9 +11,10 @@ import { SignupPage } from "./src/auth/email/SignupPage" with { type: "ref" };
 import { userSignupFields } from "./src/auth/email/userSignupFields" with { type: "ref" };
 import { onAfterSignup } from "./src/auth/email/onAfterSignup" with { type: "ref" };
 
-import { getMyPlayerProfile } from "./src/player/queries" with { type: "ref" };
+import { getMyPlayerProfile, getPlayerByQrToken } from "./src/player/queries" with { type: "ref" };
 import { updateMyPlayerProfile } from "./src/player/actions" with { type: "ref" };
 import { PlayerProfilePage } from "./src/player/PlayerProfilePage" with { type: "ref" };
+import { PlayerVerificationPage } from "./src/player/PlayerVerificationPage" with { type: "ref" };
 
 export default app({
   name: "socialSoccer",
@@ -68,6 +69,11 @@ export default app({
       auth: true,
     }),
 
+    query(getPlayerByQrToken, {
+      entities: ["PlayerProfile"],
+      auth: false,
+    }),
+
     action(updateMyPlayerProfile, {
       entities: ["PlayerProfile"],
       auth: true,
@@ -83,6 +89,12 @@ export default app({
       "PlayerProfileRoute",
       "/player-profile",
       page(PlayerProfilePage),
+    ),
+
+    route(
+      "PlayerVerificationRoute",
+      "/verify-player/:qrToken",
+      page(PlayerVerificationPage),
     ),
 
     route(

@@ -322,7 +322,7 @@ export function PlayerProfilePage() {
 
           <div className="flex justify-center">
             <QRCodeSVG
-              value={profile.qrToken}
+              value={`${window.location.origin}/verify-player/${profile.qrToken}`}
               size={200}
               level="H"
             />
