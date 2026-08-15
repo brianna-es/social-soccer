@@ -6,6 +6,8 @@ RUN apk add --no-cache openssl python3 build-base libtool autoconf automake
 WORKDIR /app
 
 COPY package.json package-lock.json ./
+COPY .wasproot ./
+COPY .waspignore ./
 COPY main.wasp.ts ./
 COPY schema.prisma ./
 COPY tsconfig*.json ./
