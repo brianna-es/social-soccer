@@ -2,11 +2,11 @@ import { ReactNode } from "react";
 
 export function AuthLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex justify-center">
-      {/* Auth UI has margin-top on title, so we lower the top padding */}
-      <div className="card mt-32 h-fit w-full max-w-md px-8 py-10 pt-4">
+    <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-4 py-12">
+      <div className="card w-full max-w-md p-8 sm:p-10 shadow-2xl border border-slate-800 bg-slate-900/90 backdrop-blur-xl">
         {children}
       </div>
     </div>
   );
 }
+

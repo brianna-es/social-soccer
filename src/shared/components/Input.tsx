@@ -19,7 +19,7 @@ export function Input({ className, label, fieldState, ...props }: InputProps) {
       <input
         id={id}
         className={twJoin(
-          "w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-800 shadow-xs focus:border-primary-500 focus:outline-hidden focus:ring-1 focus:ring-primary-500",
+          "w-full rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-2.5 text-white placeholder-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all",
           className,
         )}
         {...props}

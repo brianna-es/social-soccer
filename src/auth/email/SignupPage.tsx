@@ -21,14 +21,15 @@ export function SignupPage() {
           },
         ]}
       />
-      <br />
-      <span className="text-sm font-medium text-neutral-900">
-        Already have an account?{" "}
-        <Link to="/login" className="font-semibold underline">
-          Go to login
-        </Link>
-        .
-      </span>
+      <div className="mt-6 border-t border-slate-800 pt-4 text-center">
+        <span className="text-sm font-medium text-slate-300">
+          ¿Ya tienes una cuenta?{" "}
+          <Link to="/login" className="font-bold text-emerald-400 hover:text-emerald-300 underline transition-colors">
+            Iniciar sesión
+          </Link>
+        </span>
+      </div>
     </AuthLayout>
   );
 }
+

@@ -4,11 +4,12 @@ import { Header } from "./shared/components/Header";
 
 export function App() {
   return (
-    <>
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-emerald-500 selection:text-slate-950">
       <Header />
-      <main className="mx-auto w-full max-w-6xl px-6 py-8">
+      <main className="flex-1 w-full">
         <Outlet />
       </main>
-    </>
+    </div>
   );
 }
+

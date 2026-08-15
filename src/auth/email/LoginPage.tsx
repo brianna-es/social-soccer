@@ -6,22 +6,20 @@ export function LoginPage() {
   return (
     <AuthLayout>
       <LoginForm />
-      <br />
-      <span className="text-sm font-medium text-neutral-900">
-        Don&apos;t have an account yet?{" "}
-        <Link to="/signup" className="font-semibold underline">
-          Go to signup
-        </Link>
-        .
-      </span>
-      <br />
-      <span className="text-sm font-medium text-neutral-900">
-        Forgot your password?{" "}
-        <Link to="/request-password-reset" className="font-semibold underline">
-          Reset it
-        </Link>
-        .
-      </span>
+      <div className="mt-6 border-t border-slate-800 pt-4 flex flex-col items-center gap-2 text-center">
+        <span className="text-sm font-medium text-slate-300">
+          ¿No tienes una cuenta aún?{" "}
+          <Link to="/signup" className="font-bold text-emerald-400 hover:text-emerald-300 underline transition-colors">
+            Regístrate aquí
+          </Link>
+        </span>
+        <span className="text-sm font-medium text-slate-400">
+          ¿Olvidaste tu contraseña?{" "}
+          <Link to="/request-password-reset" className="font-semibold text-slate-300 hover:text-white underline transition-colors">
+            Restablecerla
+          </Link>
+        </span>
+      </div>
     </AuthLayout>
   );
 }
