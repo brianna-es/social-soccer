@@ -30,6 +30,8 @@ RUN apk add --no-cache openssl python3
 
 WORKDIR /app
 
+RUN npm install -g prisma@5.19.1
+
 COPY --from=builder /app/.wasp/out /app
 
 ENV NODE_ENV=production
