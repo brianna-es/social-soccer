@@ -19,6 +19,8 @@ RUN npm install
 
 RUN npm install -g @wasp.sh/wasp-cli@0.25.0
 
+RUN wasp install
+
 RUN wasp build
 
 FROM node:24.14.1-alpine3.23
