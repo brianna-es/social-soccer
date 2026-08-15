@@ -6,29 +6,29 @@
 
 ## Phase 1 - Project Setup
 
-- [ ] T001 Configure the Social Soccer Wasp project structure and development environment.
-- [ ] T002 Configure TypeScript, ESLint, Prettier, TailwindCSS, and project dependencies.
-- [ ] T003 Configure PostgreSQL database connectivity through Prisma and environment variables.
+- [x] T001 Configure the Social Soccer Wasp project structure and development environment.
+- [x] T002 Configure TypeScript, ESLint, Prettier, TailwindCSS, and project dependencies.
+- [x] T003 Configure PostgreSQL database connectivity through Prisma and environment variables.
 
 ## Phase 2 - Foundational Infrastructure
 
-- [ ] T004 Define the Prisma database schema for User, PlayerProfile, Team, League, Division, Match, and related entities.
-- [ ] T005 Configure Wasp authentication, user sessions, and protected application routes.
-- [ ] T006 Create the foundational application layout, navigation, and authenticated user experience.
-- [ ] T007 Configure database migrations for the PostgreSQL production environment.
-- [ ] T008 Validate the foundational application with compilation, database validation, and basic authentication tests.
+- [x] T004 Define the Prisma database schema for User, PlayerProfile, Team, League, Division, Match, and related entities.
+- [x] T005 Configure Wasp authentication, user sessions, and protected application routes.
+- [x] T006 Create the foundational application layout, navigation, and authenticated user experience.
+- [x] T007 Configure database migrations for the PostgreSQL production environment.
+- [x] T008 Validate the foundational application with compilation, database validation, and basic authentication tests.
 
 ## Phase 3 - User Story 1: Digital Player Identity & Registration (P1)
 
 **Goal**: Allow amateur players to register and obtain a verifiable digital player identity.
 
-- [ ] T009 Create the PlayerProfile data model and connect it to the authenticated User.
-- [ ] T010 Implement player registration and profile creation with personal information.
-- [ ] T011 Implement player profile editing and persistence of player information.
-- [ ] T012 Generate a unique QR verification token for every player profile.
-- [ ] T013 Create the digital player identity view displaying player information and QR code.
-- [ ] T014 Implement player verification using the QR token and player identity data.
-- [ ] T015 Validate the complete player registration, profile, QR generation, and verification flow.
+- [x] T009 Create the PlayerProfile data model and connect it to the authenticated User.
+- [x] T010 Implement player registration and profile creation with personal information.
+- [x] T011 Implement player profile editing and persistence of player information.
+- [x] T012 Generate a unique QR verification token for every player profile.
+- [x] T013 Create the digital player identity view displaying player information and QR code.
+- [x] T014 Implement player verification using the QR token and player identity data.
+- [x] T015 Validate the complete player registration, profile, QR generation, and verification flow.
 
 ## Phase 4 - User Story 2: League Management & Match Scheduling (P2)
 
